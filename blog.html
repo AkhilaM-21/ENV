@@ -115,6 +115,10 @@ body{
   .arc-1,.arc-2,.arc-3,.arc-4,.arc-5{
     transform:none !important;
   }
+  .navbar-brand img {
+    height: 110px;
+    width: auto;
+  }
 }
 </style>
 </head>
@@ -125,6 +129,7 @@ body{
 <nav class="navbar navbar-expand-lg fixed-top navbar-scrolled">
   <div class="container-fluid px-4">
 
+    <div class="d-flex align-items-center gap-3">
     <!-- LOGO + BRAND -->
     <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
       <img src="images/logo.png" alt="ENV Safe Solutions">
@@ -139,6 +144,7 @@ body{
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#envNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+    </div>
 
     <!-- MENU -->
     <div class="collapse navbar-collapse justify-content-end" id="envNav">
@@ -147,7 +153,7 @@ body{
         <li class="nav-item"><a class="nav-link nav-link-item" href="about.html"><i class="bi bi-info-circle"></i>About</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="services.html"><i class="bi bi-gear"></i>Services</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="products.html"><i class="bi bi-box"></i>Products</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-item active" href="blog.html"><i class="bi bi-journal-text"></i>Blog Posts</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item" href="careers.html"><i class="bi bi-briefcase"></i>Careers</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="contact.html"><i class="bi bi-envelope"></i>Contact</a></li>
       </ul>
     </div>
@@ -239,7 +245,7 @@ body{
     <div class="row g-4">
       <div class="col-md-4">
         <div class="d-flex align-items-center gap-3 mb-3">
-          <img src="images/logo.png" alt="ENV Logo" style="height: 60px;">
+          <img src="images/logo.png" alt="ENV Logo" style="height: 110px;">
           <h5 class="text-uppercase mb-0 fw-bold">ENV SAFE SOLUTIONS</h5>
         </div>
         <p class="opacity-75">Environmental engineering & water recycling solutions. Committed to a cleaner, greener future.</p>
@@ -247,17 +253,30 @@ body{
       <div class="col-md-4">
         <h6 class="text-uppercase mb-3 fw-bold text-success">Quick Links</h6>
         <ul class="footer-links">
-          <li>About Us</li>
-          <li>Why Choose Us</li>
-          <li>Services</li>
-          <li>Contact</li>
+          <li><a href="about.html" class="text-decoration-none text-black fw-bold">About Us</a></li>
+          <li><a href="index.html#why-us" class="text-decoration-none text-black fw-bold">Why Choose Us</a></li>
+          <li><a href="services.html" class="text-decoration-none text-black fw-bold">Services</a></li>
+          <li><a href="contact.html" class="text-decoration-none text-black fw-bold">Contact</a></li>
         </ul>
       </div>
       <div class="col-md-4">
-        <h6 class="text-uppercase mb-3 fw-bold text-success">Contact Info</h6>
-        <p class="mb-1"><i class="bi bi-geo-alt me-2"></i> Hyderabad, India</p>
-        <p class="mb-1"><i class="bi bi-envelope me-2"></i> avii@example.com</p>
-        <p class="mb-1"><i class="bi bi-telephone me-2"></i> +91 999999999</p>
+        <h6 class="text-uppercase mb-3 fw-bold text-success">Contact Us</h6>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-geo-alt"></i></span>
+          <span>Hyderabad, India</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-envelope"></i></span>
+          <span>hari@envsafesolutions.com</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-envelope"></i></span>
+          <span>Designsenv@outlook.com</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-telephone"></i></span>
+          <span>+91 9703082102</span>
+        </div>
       </div>
     </div>
     <hr class="my-4 opacity-25">
@@ -266,9 +285,9 @@ body{
         <p class="mb-0 opacity-75">© ENV Safe Solutions. All rights reserved.</p>
       </div>
       <div class="col-md-6 text-center text-md-end">
-        <a href="#" class="text-black me-3"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="text-black me-3"><i class="bi bi-linkedin"></i></a>
-        <a href="#" class="text-black"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="social-icon-gradient me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-icon-gradient me-3"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="social-icon-gradient"><i class="bi bi-twitter"></i></a>
       </div>
     </div>
   </div>

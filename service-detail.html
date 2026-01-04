@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Service Details - ENV Safe Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #f8fafc;
+    }
+    .detail-hero {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      margin-top: 76px;
+    }
+    .detail-hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .detail-hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .content-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin-top: -60px;
+      position: relative;
+      z-index: 3;
+    }
+    @media (max-width: 991.98px) {
+      .navbar-brand img {
+        height: 110px;
+        width: auto;
+      }
+    }
+    /* Theme Colors */
+    .text-theme {
+      background: linear-gradient(135deg, #1b6fa1, #5fa834);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .btn-outline-primary {
+      color: #5fa834;
+      border-color: #5fa834;
+      font-weight: 600;
+    }
+    .btn-outline-primary:hover {
+      background: linear-gradient(135deg, #1b6fa1, #5fa834);
+      border-color: transparent;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-scrolled">
+  <div class="container-fluid px-4">
+    <div class="d-flex align-items-center gap-3">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="images/logo.png" alt="ENV Safe Solutions">
+      <span class="brand-text">
+        <span class="brand-env">ENV</span>
+        <span class="brand-safe"> SAFE</span>
+        <span class="brand-solutions"> SOLUTIONS</span>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#envNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="envNav">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link nav-link-item" href="index.html"><i class="bi bi-house"></i>Home</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item" href="about.html"><i class="bi bi-info-circle"></i>About</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item active" href="services.html"><i class="bi bi-gear"></i>Services</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item" href="products.html"><i class="bi bi-box"></i>Products</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item" href="careers.html"><i class="bi bi-briefcase"></i>Careers</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item" href="contact.html"><i class="bi bi-envelope"></i>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<div class="detail-hero" id="heroBg">
+  <div class="container detail-hero-content">
+    <h1 class="display-4 fw-bold" id="pageTitle">Service Details</h1>
+  </div>
+</div>
+
+<!-- CONTENT SECTION -->
+<div class="container pb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="content-box">
+        <h3 class="fw-bold text-theme mb-4" id="contentTitle">Loading...</h3>
+        <div id="contentBody" class="text-muted lead" style="line-height: 1.8;">
+          <!-- Content injected via JS -->
+        </div>
+        <div class="mt-5">
+          <a href="services.html" class="btn btn-outline-primary px-4 py-2">Back to Services</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <img src="images/logo.png" alt="ENV Logo" style="height: 110px;">
+          <h5 class="text-uppercase mb-0 fw-bold">ENV SAFE SOLUTIONS</h5>
+        </div>
+        <p class="opacity-75">Environmental engineering & water recycling solutions. Committed to a cleaner, greener future.</p>
+      </div>
+      <div class="col-md-4">
+        <h6 class="text-uppercase mb-3 fw-bold text-success">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="about.html" class="text-decoration-none text-black fw-bold">About Us</a></li>
+          <li><a href="index.html#why-us" class="text-decoration-none text-black fw-bold">Why Choose Us</a></li>
+          <li><a href="services.html" class="text-decoration-none text-black fw-bold">Services</a></li>
+          <li><a href="contact.html" class="text-decoration-none text-black fw-bold">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6 class="text-uppercase mb-3 fw-bold text-success">Contact Us</h6>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-geo-alt"></i></span>
+          <span>Hyderabad, India</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-envelope"></i></span>
+          <span>hari@envsafesolutions.com</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-envelope"></i></span>
+          <span>Designsenv@outlook.com</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-telephone"></i></span>
+          <span>+91 9703082102</span>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4 opacity-25">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <p class="mb-0 opacity-75">© ENV Safe Solutions. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#" class="social-icon-gradient me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-icon-gradient me-3"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="social-icon-gradient"><i class="bi bi-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const services = {
+    "design": {
+      title: "Design & Engineering",
+      img: "images/Design & Engineering.png",
+      body: `<p>Our Design & Engineering services form the backbone of every successful project. We provide comprehensive process design, hydraulic engineering, and structural planning for Wastewater Treatment Plants (WWTP), Effluent Treatment Plants (ETP), and Sewage Treatment Plants (STP).</p>
+             <p>Our team utilizes advanced software to create precise P&IDs, layout drawings, and hydraulic profiles, ensuring that every system is optimized for the specific site conditions and influent characteristics.</p>
+             <h5 class="mt-4 text-theme fw-bold">Key Offerings:</h5>
+             <ul class="mt-2">
+                 <li><strong>Process Selection:</strong> Expertise in ASP, SBR, MBR, MBBR, and ZLD technologies.</li>
+                 <li><strong>Hydraulic Design:</strong> Detailed hydraulic flow profiles to ensure gravity flow where possible and efficient pumping.</li>
+                 <li><strong>Structural Engineering:</strong> Robust civil designs for tanks, foundations, and equipment support structures.</li>
+                 <li><strong>3D Modeling:</strong> Visualization of the plant layout for better space management and clash detection.</li>
+             </ul>
+             <p>We ensure all designs strictly adhere to CPCB and SPCB discharge norms, guaranteeing regulatory compliance from the drawing board itself.</p>`
+    },
+    "epc": {
+      title: "EPC & Turnkey Executions",
+      img: "images/EPC & Turnkey Executions.jpeg",
+      body: `<p>ENV Safe Solutions offers end-to-end EPC (Engineering, Procurement, and Construction) services. We take full responsibility for the project lifecycle, from the initial ground-breaking to the final commissioning.</p>
+             <p>Our turnkey approach ensures seamless integration of civil, mechanical, and electrical components, delivering ready-to-operate plants on time and within budget constraints.</p>
+             <h5 class="mt-4 text-theme fw-bold">Our EPC Approach:</h5>
+             <ul class="mt-2">
+                 <li><strong>Single Point Responsibility:</strong> We manage all vendors and subcontractors, simplifying communication for you.</li>
+                 <li><strong>Quality Procurement:</strong> Sourcing of high-quality mechanical and electrical equipment from trusted OEMs.</li>
+                 <li><strong>Timely Execution:</strong> Strict project management schedules (PERT/CPM) to avoid delays.</li>
+                 <li><strong>Safety First:</strong> Adherence to industrial safety standards during all construction phases.</li>
+             </ul>
+             <p>Post-commissioning, we provide comprehensive training to your staff for smooth plant operation.</p>`
+    },
+    "om": {
+      title: "Operation & Maintenance (O&M)",
+      img: "images/Operation & Maintenance (O&M).jpeg",
+      body: `<p>Efficient operation is key to the longevity of any treatment plant. Our O&M services provide trained manpower, chemical management, and routine preventive maintenance to ensure your plant operates at peak efficiency.</p>
+             <p>We monitor critical parameters daily to ensure compliance with pollution control board norms and minimize downtime.</p>
+             <h5 class="mt-4 text-theme fw-bold">Scope of Services:</h5>
+             <ul class="mt-2">
+                 <li><strong>Manpower Supply:</strong> Skilled operators, supervisors, and chemists available 24/7.</li>
+                 <li><strong>Process Optimization:</strong> Regular adjustment of dosing and aeration based on influent quality.</li>
+                 <li><strong>Lab Analysis:</strong> Daily testing of pH, COD, BOD, TSS, and TDS to track performance.</li>
+                 <li><strong>Preventive Maintenance:</strong> Scheduled servicing of pumps, blowers, and motors to prevent breakdowns.</li>
+                 <li><strong>Reporting:</strong> Monthly performance reports and compliance documentation.</li>
+             </ul>`
+    },
+    "upgrade": {
+      title: "Plant Upgradation",
+      img: "images/Plant Upgradation.jpeg",
+      body: `<p>As industries grow, so does their waste generation. We specialize in upgrading existing treatment facilities to handle higher hydraulic and organic loads.</p>
+             <p>Our upgradation services involve integrating modern technologies into legacy systems, improving treatment quality without the need for entirely new infrastructure.</p>
+             <h5 class="mt-4 text-theme fw-bold">Upgradation Solutions:</h5>
+             <ul class="mt-2">
+                 <li><strong>Capacity Expansion:</strong> Modifying tanks and adding equipment to treat increased wastewater volumes.</li>
+                 <li><strong>Technology Shift:</strong> Converting conventional ASP systems to MBR or MBBR for better quality and smaller footprint.</li>
+                 <li><strong>Tertiary Treatment:</strong> Adding Ultrafiltration (UF) and Reverse Osmosis (RO) for water recycling.</li>
+                 <li><strong>Automation:</strong> Upgrading manual panels to PLC/SCADA based automatic control systems.</li>
+             </ul>`
+    },
+    "retrofit": {
+      title: "Retrofitting",
+      img: "images/Retrofitting.jpeg",
+      body: `<p>Aging infrastructure can lead to increased operational costs and compliance risks. Our retrofitting solutions involve replacing outdated components—such as aerators, pumps, and diffusers—with energy-efficient alternatives.</p>
+             <p>This process extends the life of your plant and significantly reduces power consumption.</p>
+             <h5 class="mt-4 text-theme fw-bold">Key Retrofit Activities:</h5>
+             <ul class="mt-2">
+                 <li><strong>Diffuser Replacement:</strong> Swapping coarse bubble diffusers with fine bubble membranes for higher oxygen transfer efficiency.</li>
+                 <li><strong>Blower Upgrades:</strong> Installing high-efficiency turbo or screw blowers to reduce energy bills.</li>
+                 <li><strong>Media Replacement:</strong> Changing filter media (sand/carbon) and bio-media for better filtration.</li>
+                 <li><strong>Piping & Structural Repair:</strong> Fixing leakages and strengthening corroded structures.</li>
+             </ul>`
+    },
+    "compliance": {
+      title: "Environmental Compliance Support",
+      img: "images/envirnment.jpeg",
+      body: `<p>Navigating the complex landscape of environmental regulations can be challenging. We provide expert assistance with CPCB and SPCB norms, helping you obtain necessary consents (CFE/CFO).</p>
+             <p>Our services include environmental audits, statutory documentation, and liaison support to ensure your business remains fully compliant.</p>
+             <h5 class="mt-4 text-theme fw-bold">Compliance Services:</h5>
+             <ul class="mt-2">
+                 <li><strong>Consent Management:</strong> Application and processing for Consent for Establishment (CFE) and Consent for Operation (CFO).</li>
+                 <li><strong>Environmental Audits:</strong> Comprehensive water and energy audits to identify savings and compliance gaps.</li>
+                 <li><strong>Regulatory Reporting:</strong> Filing of hazardous waste returns, water cess returns, and environmental statements.</li>
+                 <li><strong>Liaisoning:</strong> Representing your company during PCB inspections and responding to show-cause notices.</li>
+             </ul>`
+    },
+    "mee": {
+      title: "MEE Troubleshooting, Erection & Commissioning",
+      img: "images/MEE Troubleshooting, Erection & Commissioning.jpeg",
+      body: `<p>Multi-Effect Evaporators (MEE) are critical for Zero Liquid Discharge (ZLD) systems but often face operational challenges like scaling and low steam economy.</p>
+             <p>We offer specialized services for MEE erection, commissioning, and troubleshooting. Our experts analyze operational data to optimize steam consumption and resolve scaling issues effectively.</p>
+             <h5 class="mt-4 text-theme fw-bold">MEE Expertise:</h5>
+             <ul class="mt-2">
+                 <li><strong>Erection & Commissioning:</strong> Professional installation and startup of Falling Film, Forced Circulation, and Agitated Thin Film Dryers (ATFD).</li>
+                 <li><strong>Troubleshooting:</strong> Diagnosing vacuum drops, pump cavitation, and frequent scaling issues.</li>
+                 <li><strong>Descaling Services:</strong> Chemical and mechanical cleaning of calandria tubes.</li>
+                 <li><strong>Steam Economy Optimization:</strong> Process modifications to improve the water-to-steam ratio, reducing fuel costs.</li>
+             </ul>`
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const data = services[id];
+
+  if (data) {
+    document.getElementById("pageTitle").innerText = data.title;
+    document.getElementById("contentTitle").innerText = data.title;
+    document.getElementById("contentBody").innerHTML = data.body;
+    document.getElementById("heroBg").style.backgroundImage = `url('${data.img}')`;
+  } else {
+    document.getElementById("contentBody").innerHTML = "<p>Service not found. Please return to the services page.</p>";
+  }
+</script>
+
+</body>
+</html>

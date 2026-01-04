@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details - ENV Safe Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #f8fafc;
+    }
+    .detail-hero {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      margin-top: 76px;
+    }
+    .detail-hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .detail-hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .content-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      margin-top: -60px;
+      position: relative;
+      z-index: 3;
+    }
+    @media (max-width: 991.98px) {
+      .navbar-brand img {
+        height: 110px;
+        width: auto;
+      }
+    }
+    /* Theme Colors */
+    .text-theme {
+      background: linear-gradient(135deg, #1b6fa1, #5fa834);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+    .btn-outline-primary {
+      color: #5fa834;
+      border-color: #5fa834;
+      font-weight: 600;
+    }
+    .btn-outline-primary:hover {
+      background: linear-gradient(135deg, #1b6fa1, #5fa834);
+      border-color: transparent;
+      color: #fff;
+    }
+    /* Filled Theme Button */
+    .btn-theme-filled {
+      background: linear-gradient(135deg, #1b6fa1, #5fa834);
+      border: none;
+      color: #fff;
+      font-weight: 600;
+    }
+    .btn-theme-filled:hover {
+      background: linear-gradient(135deg, #5fa834, #1b6fa1);
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(27, 111, 161, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-scrolled">
+  <div class="container-fluid px-4">
+    <div class="d-flex align-items-center gap-3">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="images/logo.png" alt="ENV Safe Solutions">
+      <span class="brand-text">
+        <span class="brand-env">ENV</span>
+        <span class="brand-safe"> SAFE</span>
+        <span class="brand-solutions"> SOLUTIONS</span>
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#envNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="envNav">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link nav-link-item" href="index.html"><i class="bi bi-house"></i>Home</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item" href="about.html"><i class="bi bi-info-circle"></i>About</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item" href="services.html"><i class="bi bi-gear"></i>Services</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item active" href="products.html"><i class="bi bi-box"></i>Products</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item" href="careers.html"><i class="bi bi-briefcase"></i>Careers</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-item" href="contact.html"><i class="bi bi-envelope"></i>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<div class="detail-hero" id="heroBg">
+  <div class="container detail-hero-content">
+    <h1 class="display-4 fw-bold" id="pageTitle">Product Details</h1>
+  </div>
+</div>
+
+<!-- CONTENT SECTION -->
+<div class="container pb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="content-box">
+        <h3 class="fw-bold text-theme mb-4" id="contentTitle">Loading...</h3>
+        <div id="contentBody" class="text-muted lead" style="line-height: 1.8;">
+          <!-- Content injected via JS -->
+        </div>
+        <div class="mt-5">
+          <a href="products.html" class="btn btn-theme-filled px-4 py-2">Back to Products</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="d-flex align-items-center gap-3 mb-3">
+          <img src="images/logo.png" alt="ENV Logo" style="height: 110px;">
+          <h5 class="text-uppercase mb-0 fw-bold">ENV SAFE SOLUTIONS</h5>
+        </div>
+        <p class="opacity-75">Environmental engineering & water recycling solutions. Committed to a cleaner, greener future.</p>
+      </div>
+      <div class="col-md-4">
+        <h6 class="text-uppercase mb-3 fw-bold text-success">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="about.html" class="text-decoration-none text-black fw-bold">About Us</a></li>
+          <li><a href="index.html#why-us" class="text-decoration-none text-black fw-bold">Why Choose Us</a></li>
+          <li><a href="services.html" class="text-decoration-none text-black fw-bold">Services</a></li>
+          <li><a href="contact.html" class="text-decoration-none text-black fw-bold">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6 class="text-uppercase mb-3 fw-bold text-success">Contact Us</h6>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-geo-alt"></i></span>
+          <span>Hyderabad, India</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-envelope"></i></span>
+          <span>hari@envsafesolutions.com</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-envelope"></i></span>
+          <span>Designsenv@outlook.com</span>
+        </div>
+        <div class="footer-contact-row">
+          <span class="footer-icon"><i class="bi bi-telephone"></i></span>
+          <span>+91 9703082102</span>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4 opacity-25">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <p class="mb-0 opacity-75">© ENV Safe Solutions. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#" class="social-icon-gradient me-3"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-icon-gradient me-3"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="social-icon-gradient"><i class="bi bi-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const products = {
+    "biological": {
+      title: "ASP, SBR, MBBR Systems",
+      img: "images/product-1.png",
+      body: `<p>We provide comprehensive biological treatment solutions including Activated Sludge Process (ASP), Sequencing Batch Reactors (SBR), and Moving Bed Biofilm Reactors (MBBR). These systems are engineered for efficient organic matter removal, nitrification, and denitrification, ensuring compliance with strict discharge norms.</p>
+             <h5 class="mt-4 text-theme fw-bold">Technology Overview:</h5>
+             <ul class="mt-2">
+                 <li><strong>Activated Sludge Process (ASP):</strong> A proven, cost-effective method for treating municipal and industrial wastewater using suspended growth of microorganisms. Ideal for large volumes with consistent characteristics.</li>
+                 <li><strong>Sequencing Batch Reactor (SBR):</strong> A compact, batch-process system that performs aeration, settlement, and decanting in a single tank. Offers flexibility for varying flow rates and high nutrient removal efficiency.</li>
+                 <li><strong>Moving Bed Biofilm Reactor (MBBR):</strong> Utilizes floating plastic carriers to provide a large surface area for biofilm growth. This technology is highly resilient to shock loads and requires a smaller footprint compared to conventional systems.</li>
+             </ul>
+             <h5 class="mt-4 text-theme fw-bold">Key Advantages:</h5>
+             <ul class="mt-2">
+                 <li><strong>High Efficiency:</strong> Superior removal of BOD, COD, and nutrients (N & P).</li>
+                 <li><strong>Compact Design:</strong> MBBR and SBR technologies offer significant space savings.</li>
+                 <li><strong>Process Stability:</strong> Robust systems capable of handling hydraulic and organic shock loads.</li>
+                 <li><strong>Automation:</strong> Integrated PLC/SCADA for automated sludge handling and aeration control.</li>
+             </ul>
+             <h5 class="mt-4 text-theme fw-bold">Applications:</h5>
+             <p>Suitable for Sewage Treatment Plants (STP), Effluent Treatment Plants (ETP) in Textile, Pharma, Chemical, and Food Processing industries.</p>`
+    },
+    "membrane": {
+      title: "Membrane Filtration Systems",
+      img: "images/product-3.jpeg",
+      body: `<p>Our membrane portfolio includes Spiral RO for high-purity water recovery, Plate & Tube (PT) RO for high COD/TDS applications, Tubular Filtration Modules (TFM) for difficult effluents, and Membrane Bioreactors (MBR) combining biological treatment with ultrafiltration for superior effluent quality.</p>
+             <h5 class="mt-4 text-theme fw-bold">Membrane Technologies:</h5>
+             <ul class="mt-2">
+                 <li><strong>Spiral Wound RO:</strong> The industry standard for desalination and water reuse, offering high surface area and energy efficiency. Best suited for pre-treated water with low suspended solids.</li>
+                 <li><strong>Plate & Tube (PT) RO:</strong> Designed with open channels to handle high fouling potential wastewater. It operates at higher pressures and can treat effluents with higher COD and TDS levels.</li>
+                 <li><strong>Tubular Filtration Modules (TFM):</strong> Robust tubular membranes capable of handling high suspended solids, oils, and grease. ideal for primary separation and lime slurry concentration.</li>
+                 <li><strong>Membrane Bioreactor (MBR):</strong> Combines activated sludge treatment with membrane filtration (UF/MF), eliminating the need for secondary clarifiers and producing high-quality permeate suitable for direct reuse.</li>
+             </ul>
+             <h5 class="mt-4 text-theme fw-bold">Performance Metrics:</h5>
+             <ul class="mt-2">
+                 <li><strong>Recovery Rates:</strong> Up to 90-95% water recovery depending on feed quality.</li>
+                 <li><strong>Permeate Quality:</strong> Consistent low SDI and TDS, suitable for boiler feed or process reuse.</li>
+                 <li><strong>Longevity:</strong> CIP (Clean-In-Place) systems ensure prolonged membrane life.</li>
+             </ul>`
+    },
+    "zld": {
+      title: "Stripper, MEE, ATFD Systems",
+      img: "images/product-4.jpeg",
+      body: `<p>Our Zero Liquid Discharge (ZLD) solutions include Steam Strippers for volatile organic removal, Multi-Effect Evaporators (MEE) for concentrating high TDS effluents, and Agitated Thin Film Dryers (ATFD) for final drying of salts, ensuring complete water recovery and solid waste management.</p>
+             <h5 class="mt-4 text-theme fw-bold">System Components:</h5>
+             <ul class="mt-2">
+                 <li><strong>Steam Strippers:</strong> Packed column towers designed to strip volatile organic compounds (VOCs), ammonia, and solvents from wastewater before evaporation, protecting downstream equipment.</li>
+                 <li><strong>Multi-Effect Evaporators (MEE):</strong> Utilizes steam economy principles where vapor from one effect heats the next. We offer Falling Film, Forced Circulation, and Rising Film evaporators tailored to the scaling tendency of the effluent.</li>
+                 <li><strong>Agitated Thin Film Dryer (ATFD):</strong> A vertical dryer with a high-speed rotor that creates a thin film on the heated wall, converting concentrated slurry into dry powder/salts, achieving true ZLD.</li>
+             </ul>
+             <h5 class="mt-4 text-theme fw-bold">Benefits:</h5>
+             <ul class="mt-2">
+                 <li><strong>Environmental Compliance:</strong> Meets strict "Zero Discharge" norms mandated by pollution control boards.</li>
+                 <li><strong>Water Recovery:</strong> Recovers >95% of wastewater as high-quality condensate for process reuse.</li>
+                 <li><strong>Resource Recovery:</strong> Potential to recover valuable salts or by-products from the waste stream.</li>
+                 <li><strong>Energy Efficiency:</strong> Optimized thermal design and Mechanical Vapor Recompression (MVR) options to minimize steam consumption.</li>
+             </ul>`
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const data = products[id];
+
+  if (data) {
+    document.getElementById("pageTitle").innerText = data.title;
+    document.getElementById("contentTitle").innerText = data.title;
+    document.getElementById("contentBody").innerHTML = data.body;
+    document.getElementById("heroBg").style.backgroundImage = `url('${data.img}')`;
+  } else {
+    document.getElementById("contentBody").innerHTML = "<p>Product not found. Please return to the products page.</p>";
+  }
+</script>
+
+</body>
+</html>

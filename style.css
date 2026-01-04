@@ -13,7 +13,7 @@ body {
 
 /* Logo */
 .navbar-brand img {
-  height: 48px;
+  height: 90px;
 }
 
 /* Brand text */
@@ -605,6 +605,39 @@ body {
   padding-left: 5px;
 }
 
+/* Footer Icons */
+.footer-contact-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.footer-icon {
+  width: auto;
+  height: auto;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-icon i,
+.social-icon-gradient i {
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, var(--env-blue), var(--env-green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.social-icon-gradient { text-decoration: none; }
+
 /* ================= WHY CHOOSE ENV ================= */
 .why-env-section {
  
@@ -820,7 +853,7 @@ body {
 
 @media (max-width: 450px) {
   .brand-text { font-size: 1rem; }
-  .navbar-brand img { height: 36px; }
+  .navbar-brand img { height: 65px; }
   .carousel-caption h1 { font-size: 1.5rem; }
   .carousel-caption p { font-size: 0.9rem; }
 }
@@ -918,7 +951,7 @@ body {
 .timeline-item.left {
   justify-content: flex-end;
   padding-right: 55%;
-}
+}zz
 .timeline-item.right {
   justify-content: flex-start;
   padding-left: 55%;
