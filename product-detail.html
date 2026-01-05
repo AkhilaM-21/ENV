@@ -17,42 +17,56 @@
     body {
       background-color: #f8fafc;
     }
-    .detail-hero {
-      height: 400px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      margin-top: 76px;
-    }
-    .detail-hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-    }
-    .detail-hero-content {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* New Layout Styles */
+    .detail-header-section {
+      background: linear-gradient(135deg, #1b6fa1, #5fa834);
+      padding: 140px 0 100px;
+      color: #fff;
       text-align: center;
+    }
+    .detail-content-section {
+      margin-top: -60px;
+    }
+    .detail-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+    .detail-image-box {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .detail-image-box img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .detail-image-box:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Breadcrumb overrides for dark bg */
+    .detail-header-section .breadcrumb-item a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+    .detail-header-section .breadcrumb-item.active {
       color: #fff;
     }
-    .content-box {
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      margin-top: -60px;
-      position: relative;
-      z-index: 3;
+    .detail-header-section .breadcrumb-item + .breadcrumb-item::before {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .navbar-brand img {
+      height: 70px;
+      width: auto;
     }
     @media (max-width: 991.98px) {
       .navbar-brand img {
-        height: 110px;
-        width: auto;
+        height: 60px;
       }
     }
     /* Theme Colors */
@@ -85,6 +99,61 @@
       color: #fff;
       box-shadow: 0 5px 15px rgba(27, 111, 161, 0.3);
     }
+    .icon-box-circle {
+      width: 40px;
+      height: 40px;
+      background: rgba(27, 111, 161, 0.1);
+      color: #1b6fa1;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Injected Content Styling */
+    .content-area h5 {
+      color: #1b6fa1;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.35rem;
+      border-left: 5px solid #5fa834;
+      padding-left: 15px;
+      background: linear-gradient(to right, rgba(95, 168, 52, 0.05), transparent);
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 0 4px 4px 0;
+      -webkit-text-fill-color: #1b6fa1;
+      -webkit-background-clip: border-box;
+      background-clip: border-box;
+    }
+    .content-area h5:first-child {
+      margin-top: 0;
+    }
+    .content-area ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1.5rem;
+    }
+    .content-area ul li {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      color: #4a5568;
+      font-size: 1.05rem;
+    }
+    .content-area ul li::before {
+      content: "\F26A"; /* Bootstrap Icon check-circle */
+      font-family: "bootstrap-icons";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #5fa834;
+      font-size: 1.2rem;
+    }
+    .content-area p {
+      color: #4a5568;
+      margin-bottom: 1.5rem;
+    }
   </style>
 </head>
 <body>
@@ -109,8 +178,34 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link nav-link-item" href="index.html"><i class="bi bi-house"></i>Home</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="about.html"><i class="bi bi-info-circle"></i>About</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-item" href="services.html"><i class="bi bi-gear"></i>Services</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-item active" href="products.html"><i class="bi bi-box"></i>Products</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-gear"></i>Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=design">Design & Engineering</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=epc">EPC & Turnkey</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=om">Operation & Maintenance</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=upgrade">Plant Upgradation</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=retrofit">Retrofitting</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=compliance">Compliance Support</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=mee">MEE Services</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-item dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-box"></i>Products</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="products.html">All Products</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=wwtp">WWTP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=iwtp">IWTP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=stp">STP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=etp">ETP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=mbr">MBR</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=zld">ZLD System</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=services">Treatment Services</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="careers.html"><i class="bi bi-briefcase"></i>Careers</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="contact.html"><i class="bi bi-envelope"></i>Contact</a></li>
       </ul>
@@ -118,29 +213,73 @@
   </div>
 </nav>
 
-<!-- HERO SECTION -->
-<div class="detail-hero" id="heroBg">
-  <div class="container detail-hero-content">
-    <h1 class="display-4 fw-bold" id="pageTitle">Product Details</h1>
+<!-- HEADER SECTION -->
+<section class="detail-header-section">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+        <li class="breadcrumb-item active" aria-current="page" id="breadcrumbCurrent">Detail</li>
+      </ol>
+    </nav>
+    <h1 class="display-4 fw-bold mb-0" id="pageTitle">Loading...</h1>
   </div>
-</div>
+</section>
 
 <!-- CONTENT SECTION -->
-<div class="container pb-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-10">
-      <div class="content-box">
-        <h3 class="fw-bold text-theme mb-4" id="contentTitle">Loading...</h3>
-        <div id="contentBody" class="text-muted lead" style="line-height: 1.8;">
-          <!-- Content injected via JS -->
+<section class="detail-content-section pb-5">
+  <div class="container">
+    <div class="detail-card">
+      <!-- 1. Full Width Intro -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div id="contentIntro" class="content-area"></div>
         </div>
-        <div class="mt-5">
-          <a href="products.html" class="btn btn-theme-filled px-4 py-2">Back to Products</a>
+      </div>
+
+      <!-- 2. Image Left, Process Right -->
+      <div class="row g-5 mb-5 align-items-center">
+        <div class="col-lg-5">
+          <div class="detail-image-box">
+            <img id="productImg" src="" alt="Product Image">
+          </div>
         </div>
+        <div class="col-lg-7">
+          <div id="contentProcess" class="content-area"></div>
+        </div>
+      </div>
+
+      <!-- 3. Grid: Engineering, Applications, Benefits, Features -->
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="h-100 p-4 bg-light rounded-4 border">
+            <div id="contentEngineering" class="content-area"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-4 bg-light rounded-4 border">
+            <div id="contentApplications" class="content-area"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-4 bg-light rounded-4 border">
+            <div id="contentBenefits" class="content-area"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="h-100 p-4 bg-light rounded-4 border">
+            <div id="contentFeatures" class="content-area"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3 border-top">
+        <a href="products.html" class="btn btn-outline-primary"><i class="bi bi-arrow-left me-2"></i>Back to Products</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer" id="contact">
@@ -148,7 +287,7 @@
     <div class="row g-4">
       <div class="col-md-4">
         <div class="d-flex align-items-center gap-3 mb-3">
-          <img src="images/logo.png" alt="ENV Logo" style="height: 110px;">
+          <img src="images/logo.png" alt="ENV Logo" style="height: 80px;">
           <h5 class="text-uppercase mb-0 fw-bold">ENV SAFE SOLUTIONS</h5>
         </div>
         <p class="opacity-75">Environmental engineering & water recycling solutions. Committed to a cleaner, greener future.</p>
@@ -201,60 +340,274 @@
 
 <script>
   const products = {
-    "biological": {
-      title: "ASP, SBR, MBBR Systems",
-      img: "images/product-1.png",
-      body: `<p>We provide comprehensive biological treatment solutions including Activated Sludge Process (ASP), Sequencing Batch Reactors (SBR), and Moving Bed Biofilm Reactors (MBBR). These systems are engineered for efficient organic matter removal, nitrification, and denitrification, ensuring compliance with strict discharge norms.</p>
-             <h5 class="mt-4 text-theme fw-bold">Technology Overview:</h5>
-             <ul class="mt-2">
-                 <li><strong>Activated Sludge Process (ASP):</strong> A proven, cost-effective method for treating municipal and industrial wastewater using suspended growth of microorganisms. Ideal for large volumes with consistent characteristics.</li>
-                 <li><strong>Sequencing Batch Reactor (SBR):</strong> A compact, batch-process system that performs aeration, settlement, and decanting in a single tank. Offers flexibility for varying flow rates and high nutrient removal efficiency.</li>
-                 <li><strong>Moving Bed Biofilm Reactor (MBBR):</strong> Utilizes floating plastic carriers to provide a large surface area for biofilm growth. This technology is highly resilient to shock loads and requires a smaller footprint compared to conventional systems.</li>
-             </ul>
-             <h5 class="mt-4 text-theme fw-bold">Key Advantages:</h5>
-             <ul class="mt-2">
-                 <li><strong>High Efficiency:</strong> Superior removal of BOD, COD, and nutrients (N & P).</li>
-                 <li><strong>Compact Design:</strong> MBBR and SBR technologies offer significant space savings.</li>
-                 <li><strong>Process Stability:</strong> Robust systems capable of handling hydraulic and organic shock loads.</li>
-                 <li><strong>Automation:</strong> Integrated PLC/SCADA for automated sludge handling and aeration control.</li>
-             </ul>
-             <h5 class="mt-4 text-theme fw-bold">Applications:</h5>
-             <p>Suitable for Sewage Treatment Plants (STP), Effluent Treatment Plants (ETP) in Textile, Pharma, Chemical, and Food Processing industries.</p>`
+    "wwtp": {
+      title: "Wastewater Treatment Plant (WWTP)",
+      img: "images/Waste water treament plant.jpeg",
+      intro: `<p class="lead">A Wastewater Treatment Plant treats domestic and municipal wastewater that contains organic matter, suspended solids, nutrients (nitrogen & phosphorus), oil & grease, and pathogens. The objective is to protect the environment, prevent water pollution, and enable reuse. Our WWTP solutions are engineered not just for compliance but for long-term sustainability. By integrating advanced aeration control and sludge management systems, we significantly reduce the energy footprint of the plant. Furthermore, our designs are modular, allowing for seamless expansion as your community or facility grows, ensuring that your investment is future-proof.</p>`,
+      engineering: `<h5 class="text-theme fw-bold">Engineering Approach</h5>
+             <p>WWTPs are designed based on:</p>
+             <ul>
+               <li>Influent flow (KLD / MLD)</li>
+               <li>BOD, COD, TSS load</li>
+               <li>Peak factor & hydraulic load</li>
+               <li>Local discharge norms (CPCB / SPCB)</li>
+             </ul>`,
+      process: `<h5 class="text-theme fw-bold">Process Flow</h5>
+             <ul>
+               <li><strong>Inlet Chamber & Bar Screening:</strong> Removes plastics, rags, debris</li>
+               <li><strong>Grit Chamber:</strong> Removes sand and heavy particles</li>
+               <li><strong>Equalization Tank:</strong> Balances flow and load</li>
+               <li><strong>Biological Treatment:</strong> Microorganisms degrade organic matter</li>
+               <li><strong>Secondary Clarifier:</strong> Settles biological sludge</li>
+               <li><strong>Tertiary Treatment:</strong> Filtration + disinfection</li>
+               <li><strong>Sludge Handling System:</strong> Sludge thickening & dewatering</li>
+             </ul>`,
+      benefits: `<h5 class="text-theme fw-bold">Operational Benefits</h5>
+             <ul>
+               <li>Stable plant performance</li>
+               <li>Low environmental footprint</li>
+               <li>High treated water recovery</li>
+               <li>Scalable for future expansion</li>
+             </ul>`,
+      features: `<h5 class="text-theme fw-bold">Key Features</h5>
+             <ul>
+               <li>Reduces BOD, COD, TSS, and pathogens</li>
+               <li>Environment-friendly disposal or reuse of treated water</li>
+               <li>Can be integrated with tertiary treatment for reuse applications</li>
+             </ul>`,
+      applications: `<h5 class="text-theme fw-bold">Applications</h5>
+             <ul>
+               <li>Residential communities</li>
+               <li>Commercial buildings</li>
+               <li>Hotels & hospitals</li>
+               <li>Municipal sewage treatment</li>
+             </ul>`
     },
-    "membrane": {
-      title: "Membrane Filtration Systems",
-      img: "images/product-3.jpeg",
-      body: `<p>Our membrane portfolio includes Spiral RO for high-purity water recovery, Plate & Tube (PT) RO for high COD/TDS applications, Tubular Filtration Modules (TFM) for difficult effluents, and Membrane Bioreactors (MBR) combining biological treatment with ultrafiltration for superior effluent quality.</p>
-             <h5 class="mt-4 text-theme fw-bold">Membrane Technologies:</h5>
-             <ul class="mt-2">
-                 <li><strong>Spiral Wound RO:</strong> The industry standard for desalination and water reuse, offering high surface area and energy efficiency. Best suited for pre-treated water with low suspended solids.</li>
-                 <li><strong>Plate & Tube (PT) RO:</strong> Designed with open channels to handle high fouling potential wastewater. It operates at higher pressures and can treat effluents with higher COD and TDS levels.</li>
-                 <li><strong>Tubular Filtration Modules (TFM):</strong> Robust tubular membranes capable of handling high suspended solids, oils, and grease. ideal for primary separation and lime slurry concentration.</li>
-                 <li><strong>Membrane Bioreactor (MBR):</strong> Combines activated sludge treatment with membrane filtration (UF/MF), eliminating the need for secondary clarifiers and producing high-quality permeate suitable for direct reuse.</li>
-             </ul>
-             <h5 class="mt-4 text-theme fw-bold">Performance Metrics:</h5>
-             <ul class="mt-2">
-                 <li><strong>Recovery Rates:</strong> Up to 90-95% water recovery depending on feed quality.</li>
-                 <li><strong>Permeate Quality:</strong> Consistent low SDI and TDS, suitable for boiler feed or process reuse.</li>
-                 <li><strong>Longevity:</strong> CIP (Clean-In-Place) systems ensure prolonged membrane life.</li>
+    "iwtp": {
+      title: "Industrial Water Treatment Plant (IWTP)",
+      img: "images/Industrial  water treamment plant .jpeg",
+      intro: `<p class="lead">Industrial Water Treatment Plants convert raw water into usable process water by removing hardness, TDS, iron, silica, turbidity, and organic impurities. We understand that every industry has unique water quality requirements. Whether it is ultra-pure water for pharmaceuticals or softened water for boiler feed, our IWTPs are custom-designed to meet specific process parameters. We employ high-grade components and advanced instrumentation to monitor water quality in real-time, preventing costly production downtimes.</p>`,
+      engineering: `<h5 class="text-theme fw-bold">Why Industries Need It</h5>
+             <p>Untreated water causes:</p>
+             <ul>
+               <li>Scaling in boilers & heat exchangers</li>
+               <li>Corrosion in pipelines</li>
+               <li>Process inefficiency</li>
+               <li>Product quality issues</li>
+             </ul>`,
+      process: `<h5 class="text-theme fw-bold">Typical Treatment Train</h5>
+             <ul>
+               <li>Raw Water Collection Tank</li>
+               <li>Pressure Sand Filter (PSF)</li>
+               <li>Activated Carbon Filter (ACF)</li>
+               <li>Softener / UF System</li>
+               <li>Reverse Osmosis (RO) System</li>
+               <li>DM / Polishing Unit (if required)</li>
+             </ul>`,
+      benefits: `<h5 class="text-theme fw-bold">Design Advantages</h5>
+             <ul>
+               <li>Modular construction</li>
+               <li>Energy-efficient operation</li>
+               <li>Automation-ready systems</li>
+               <li>Minimal chemical consumption</li>
+             </ul>`,
+      features: `<h5 class="text-theme fw-bold">Key Features</h5>
+             <ul>
+               <li>Removes hardness, dissolved solids, iron, silica, and contaminants</li>
+               <li>Improves water quality for industrial use</li>
+               <li>Protects boilers, cooling towers, and process equipment</li>
+             </ul>`,
+      applications: `<h5 class="text-theme fw-bold">Applications</h5>
+             <ul>
+               <li>Power plants</li>
+               <li>Pharma industries</li>
+               <li>Food & beverage industries</li>
+               <li>Chemical and textile industries</li>
+             </ul>`
+    },
+    "stp": {
+      title: "Sewage Treatment Plant (STP)",
+      img: "images/Sewage Treatment plant.jpeg",
+      intro: `<p class="lead">STP is a dedicated biological system for treating domestic sewage generated from buildings and institutions. Modern urban living demands sewage treatment solutions that are invisible to the residents—silent, odorless, and compact. Our STPs are designed with this philosophy, utilizing underground configurations or compact footprints that blend into the landscape. We prioritize technologies that minimize sludge generation and maximize water recovery for landscaping and flushing.</p>`,
+      process: `<h5 class="text-theme fw-bold">Technology Options Explained</h5>
+             <ul>
+               <li><strong>ASP (Activated Sludge Process):</strong> Conventional & cost-effective. Requires larger footprint.</li>
+               <li><strong>SBR (Sequencing Batch Reactor):</strong> Time-based batch process. High treatment efficiency. Flexible operation.</li>
+               <li><strong>MBBR (Moving Bed Bio Reactor):</strong> Biofilm-based process. Compact & shock-load resistant.</li>
+             </ul>`,
+      engineering: `<h5 class="text-theme fw-bold">Treated Water Quality</h5>
+             <ul>
+               <li>BOD &lt; 10–20 mg/L</li>
+               <li>TSS &lt; 10 mg/L</li>
+               <li>Odor-free & clear water</li>
+             </ul>`,
+      benefits: `<h5 class="text-theme fw-bold">Real-World Benefit</h5>
+             <ul>
+               <li>Reduces freshwater dependency</li>
+               <li>Enables green building compliance</li>
+               <li>Improves sustainability ratings</li>
+             </ul>`,
+      features: `<h5 class="text-theme fw-bold">Key Features</h5>
+             <ul>
+               <li>Uses biological processes like ASP, SBR, MBBR</li>
+               <li>Compact design with low operational cost</li>
+               <li>Odor-free and automated operation</li>
+             </ul>`,
+      applications: `<h5 class="text-theme fw-bold">Applications</h5>
+             <ul>
+               <li>Apartments and gated communities</li>
+               <li>IT parks and office buildings</li>
+               <li>Educational institutions</li>
+             </ul>`
+    },
+    "etp": {
+      title: "Effluent Treatment Plant (ETP)",
+      img: "images/Effluent Treatment Plant.jpeg",
+      intro: `<p class="lead">Industrial effluents are complex, toxic, and non-uniform. ETPs are designed to treat High COD & BOD, Chemicals & dyes, Oils, grease & heavy metals, and Extreme pH values. Handling industrial effluents requires a deep understanding of chemical chemistry and biological resilience. Our ETPs are built to withstand shock loads and varying influent characteristics common in manufacturing sectors. We conduct thorough treatability studies before design to ensure the chosen process train effectively neutralizes toxicity and reduces COD/BOD to permissible limits.</p>`,
+      engineering: `<h5 class="text-theme fw-bold">Engineering Customization</h5>
+             <p>Every ETP is industry-specific:</p>
+             <ul>
+               <li>Textile → Color removal</li>
+               <li>Pharma → High COD destruction</li>
+               <li>Chemical → Toxicity neutralization</li>
+             </ul>`,
+      process: `<h5 class="text-theme fw-bold">Multi-Stage Treatment</h5>
+             <ul>
+               <li>Equalization & pH correction</li>
+               <li>Chemical coagulation & flocculation</li>
+               <li>Primary clarification</li>
+               <li>Biological oxidation</li>
+               <li>Tertiary filtration</li>
+               <li>Advanced polishing (RO/ZLD)</li>
+             </ul>`,
+      benefits: `<h5 class="text-theme fw-bold">Compliance Outcome</h5>
+             <ul>
+               <li>Safe discharge to environment</li>
+               <li>Reuse in process or utilities</li>
+               <li>Reduced pollution liability</li>
+             </ul>`,
+      features: `<h5 class="text-theme fw-bold">Key Features</h5>
+             <ul>
+               <li>Customized treatment based on effluent characteristics</li>
+               <li>Physical, chemical, and biological treatment stages</li>
+               <li>Compliance with regulatory discharge standards</li>
+             </ul>`,
+      applications: `<h5 class="text-theme fw-bold">Applications</h5>
+             <ul>
+               <li>Textile industries</li>
+               <li>Chemical & pharma industries</li>
+               <li>Food processing units</li>
+               <li>Tanneries</li>
+             </ul>`
+    },
+    "mbr": {
+      title: "Membrane Bio Reactor (MBR)",
+      img: "images/Membrane Bio Reactor detail.jpeg",
+      intro: `<p class="lead">MBR combines biological degradation with membrane filtration, producing near-reclaimed quality water. Membrane Bioreactors represent the pinnacle of biological treatment efficiency. By replacing gravity settling with physical membrane barriers, we ensure that no suspended solids escape into the treated water. This makes MBR the ideal choice for projects aiming for high-quality water reuse in cooling towers or toilet flushing without extensive tertiary treatment.</p>`,
+      process: `<h5 class="text-theme fw-bold">Technical Edge</h5>
+             <ul>
+               <li>MLSS up to 10,000–12,000 mg/L</li>
+               <li>No secondary clarifier</li>
+               <li>Consistent output quality</li>
+               <li>Very small footprint</li>
+             </ul>`,
+      engineering: `<h5 class="text-theme fw-bold">Where MBR Makes Sense</h5>
+             <ul>
+               <li>Space-constrained sites</li>
+               <li>High reuse requirements</li>
+               <li>Hotels, IT parks, airports</li>
+             </ul>`,
+      benefits: `<h5 class="text-theme fw-bold">End Result</h5>
+             <ul>
+               <li>Crystal-clear water</li>
+               <li>Suitable for flushing, cooling towers</li>
+               <li>Reduced overall plant size</li>
+             </ul>`,
+      features: `<h5 class="text-theme fw-bold">Key Features</h5>
+             <ul>
+               <li>Superior treated water quality</li>
+               <li>Compact and space-saving design</li>
+               <li>Eliminates need for secondary clarifiers</li>
+             </ul>`,
+      applications: `<h5 class="text-theme fw-bold">Applications</h5>
+             <ul>
+               <li>High-end residential and commercial projects</li>
+               <li>Water reuse applications</li>
+               <li>Space-constrained sites</li>
+             </ul>`
+    },
+    "services": {
+      title: "Wastewater Treatment Services",
+      img: "images/Wastewater Treatment Services.jpeg",
+      intro: `<p class="lead">Not just installation — long-term performance assurance. Our relationship with clients extends far beyond the commissioning phase. We offer comprehensive Annual Maintenance Contracts (AMC) and Operation & Maintenance (O&M) services that take the headache out of plant management. Our technical team conducts regular audits and predictive maintenance to identify issues before they become critical failures, ensuring 24/7 compliance and peace of mind.</p>`,
+      engineering: `<h5 class="text-theme fw-bold">What We Actually Do</h5>
+             <ul>
+               <li>Plant audits & performance analysis</li>
+               <li>Hydraulic & process redesign</li>
+               <li>Energy optimization</li>
+               <li>Automation & SCADA integration</li>
+               <li>Operator training</li>
+             </ul>`,
+      process: `<h5 class="text-theme fw-bold">O&M Scope</h5>
+             <ul>
+               <li>Manpower deployment</li>
+               <li>Chemical management</li>
+               <li>Preventive maintenance</li>
+               <li>Compliance reporting</li>
+             </ul>`,
+      benefits: `<h5 class="text-theme fw-bold">Value to Client</h5>
+             <ul>
+               <li>Zero compliance risk</li>
+               <li>Lower operating cost</li>
+               <li>Extended plant life</li>
+             </ul>`,
+      features: `<h5 class="text-theme fw-bold">Key Features</h5>
+             <ul>
+               <li>Plant performance optimization</li>
+               <li>AMC and O&M services</li>
+               <li>Troubleshooting and upgradation</li>
+             </ul>`,
+      applications: `<h5 class="text-theme fw-bold">Applications</h5>
+             <ul>
+               <li>Existing WWTP / STP / ETP plants</li>
+               <li>Industries and commercial facilities</li>
              </ul>`
     },
     "zld": {
-      title: "Stripper, MEE, ATFD Systems",
-      img: "images/product-4.jpeg",
-      body: `<p>Our Zero Liquid Discharge (ZLD) solutions include Steam Strippers for volatile organic removal, Multi-Effect Evaporators (MEE) for concentrating high TDS effluents, and Agitated Thin Film Dryers (ATFD) for final drying of salts, ensuring complete water recovery and solid waste management.</p>
-             <h5 class="mt-4 text-theme fw-bold">System Components:</h5>
-             <ul class="mt-2">
-                 <li><strong>Steam Strippers:</strong> Packed column towers designed to strip volatile organic compounds (VOCs), ammonia, and solvents from wastewater before evaporation, protecting downstream equipment.</li>
-                 <li><strong>Multi-Effect Evaporators (MEE):</strong> Utilizes steam economy principles where vapor from one effect heats the next. We offer Falling Film, Forced Circulation, and Rising Film evaporators tailored to the scaling tendency of the effluent.</li>
-                 <li><strong>Agitated Thin Film Dryer (ATFD):</strong> A vertical dryer with a high-speed rotor that creates a thin film on the heated wall, converting concentrated slurry into dry powder/salts, achieving true ZLD.</li>
-             </ul>
-             <h5 class="mt-4 text-theme fw-bold">Benefits:</h5>
-             <ul class="mt-2">
-                 <li><strong>Environmental Compliance:</strong> Meets strict "Zero Discharge" norms mandated by pollution control boards.</li>
-                 <li><strong>Water Recovery:</strong> Recovers >95% of wastewater as high-quality condensate for process reuse.</li>
-                 <li><strong>Resource Recovery:</strong> Potential to recover valuable salts or by-products from the waste stream.</li>
-                 <li><strong>Energy Efficiency:</strong> Optimized thermal design and Mechanical Vapor Recompression (MVR) options to minimize steam consumption.</li>
+      title: "Zero Liquid Discharge (ZLD) System",
+      img: "images/Zero Liquid Discharge.jpeg",
+      intro: `<p class="lead">No liquid leaves the plant boundary. Every drop of wastewater is treated, recovered, and reused. Achieving Zero Liquid Discharge is a complex balance of thermal and membrane technologies. Our ZLD systems are optimized for energy efficiency, utilizing Mechanical Vapor Recompression (MVR) or Multiple Effect Evaporators (MEE) based on the specific thermal availability and cost dynamics. We focus on recovering valuable by-products where possible, turning waste management into a resource recovery opportunity.</p>`,
+      process: `<h5 class="text-theme fw-bold">ZLD Process Architecture</h5>
+             <ul>
+               <li>Primary & biological treatment</li>
+               <li>High recovery RO system</li>
+               <li>Reject concentration</li>
+               <li>Multiple Effect Evaporator (MEE)</li>
+               <li>Crystallizer / ATFD</li>
+             </ul>`,
+      engineering: `<h5 class="text-theme fw-bold">Why Industries Choose ZLD</h5>
+             <ul>
+               <li>Mandatory in many states</li>
+               <li>Extreme water scarcity</li>
+               <li>Environmental responsibility</li>
+             </ul>`,
+      benefits: `<h5 class="text-theme fw-bold">Final Outputs</h5>
+             <ul>
+               <li>Recovered water (reuse)</li>
+               <li>Solid salts (safe disposal)</li>
+               <li>Zero environmental discharge</li>
+             </ul>`,
+      features: `<h5 class="text-theme fw-bold">Key Features</h5>
+             <ul>
+               <li>100% water recovery</li>
+               <li>No liquid waste discharge</li>
+               <li>Reduces freshwater dependency</li>
+             </ul>`,
+      applications: `<h5 class="text-theme fw-bold">Applications</h5>
+             <ul>
+               <li>Highly polluting industries</li>
+               <li>Textile, pharma, chemical sectors</li>
+               <li>Strict regulatory zones</li>
              </ul>`
     }
   };
@@ -265,11 +618,16 @@
 
   if (data) {
     document.getElementById("pageTitle").innerText = data.title;
-    document.getElementById("contentTitle").innerText = data.title;
-    document.getElementById("contentBody").innerHTML = data.body;
-    document.getElementById("heroBg").style.backgroundImage = `url('${data.img}')`;
+    document.getElementById("breadcrumbCurrent").innerText = data.title;
+    document.getElementById("contentIntro").innerHTML = data.intro;
+    document.getElementById("contentProcess").innerHTML = data.process;
+    document.getElementById("contentEngineering").innerHTML = data.engineering;
+    document.getElementById("contentApplications").innerHTML = data.applications;
+    document.getElementById("contentBenefits").innerHTML = data.benefits;
+    document.getElementById("contentFeatures").innerHTML = data.features;
+    document.getElementById("productImg").src = data.img;
   } else {
-    document.getElementById("contentBody").innerHTML = "<p>Product not found. Please return to the products page.</p>";
+    document.getElementById("contentIntro").innerHTML = "<p>Product not found. Please return to the products page.</p>";
   }
 </script>
 

@@ -131,10 +131,13 @@ body{
   margin:0 10px;
   font-size:18px;
 }
+.navbar-brand img {
+  height: 70px;
+  width: auto;
+}
 @media (max-width: 991.98px) {
   .navbar-brand img {
-    height: 110px;
-    width: auto;
+    height: 60px;
   }
 }
 </style>
@@ -168,8 +171,34 @@ body{
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link nav-link-item" href="index.html"><i class="bi bi-house"></i>Home</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="about.html"><i class="bi bi-info-circle"></i>About</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-item" href="services.html"><i class="bi bi-gear"></i>Services</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-item" href="products.html"><i class="bi bi-box"></i>Products</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-gear"></i>Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=design">Design & Engineering</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=epc">EPC & Turnkey</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=om">Operation & Maintenance</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=upgrade">Plant Upgradation</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=retrofit">Retrofitting</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=compliance">Compliance Support</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=mee">MEE Services</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-box"></i>Products</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="products.html">All Products</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=wwtp">WWTP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=iwtp">IWTP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=stp">STP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=etp">ETP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=mbr">MBR</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=zld">ZLD System</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=services">Treatment Services</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="careers.html"><i class="bi bi-briefcase"></i>Careers</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item active" href="contact.html"><i class="bi bi-envelope"></i>Contact</a></li>
       </ul>
@@ -291,7 +320,7 @@ body{
     <div class="row g-4">
       <div class="col-md-4">
         <div class="d-flex align-items-center gap-3 mb-3">
-          <img src="images/logo.png" alt="ENV Logo" style="height: 110px;">
+          <img src="images/logo.png" alt="ENV Logo" style="height: 70px;">
           <h5 class="text-uppercase mb-0 fw-bold">ENV SAFE SOLUTIONS</h5>
         </div>
         <p class="opacity-75">Environmental engineering & water recycling solutions. Committed to a cleaner, greener future.</p>

@@ -55,10 +55,13 @@
         overflow: hidden;
       }
     }
+    .navbar-brand img {
+      height: 70px;
+      width: auto;
+    }
     @media (max-width: 991.98px) {
       .navbar-brand img {
-        height: 110px;
-        width: auto;
+        height: 60px;
       }
     }
     /* Theme Colors */
@@ -109,8 +112,34 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link nav-link-item" href="index.html"><i class="bi bi-house"></i>Home</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="about.html"><i class="bi bi-info-circle"></i>About</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-item active" href="services.html"><i class="bi bi-gear"></i>Services</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-item" href="products.html"><i class="bi bi-box"></i>Products</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-item dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-gear"></i>Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=design">Design & Engineering</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=epc">EPC & Turnkey</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=om">Operation & Maintenance</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=upgrade">Plant Upgradation</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=retrofit">Retrofitting</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=compliance">Compliance Support</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=mee">MEE Services</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-box"></i>Products</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="products.html">All Products</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=wwtp">WWTP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=iwtp">IWTP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=stp">STP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=etp">ETP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=mbr">MBR</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=zld">ZLD System</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=services">Treatment Services</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="careers.html"><i class="bi bi-briefcase"></i>Careers</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="contact.html"><i class="bi bi-envelope"></i>Contact</a></li>
       </ul>
@@ -136,15 +165,15 @@
       <div class="col-12">
         <div class="service-card-row">
           <div class="row g-0">
-            <div class="col-lg-5 service-img-col">
-              <img src="images/Design & Engineering.png" alt="Design & Engineering">
-            </div>
-            <div class="col-lg-7">
-              <div class="card-body p-3 d-flex flex-column justify-content-center h-100">
+            <div class="col-lg-7 order-lg-2">
+              <div class="card-body p-4 d-flex flex-column h-100">
                 <h3 class="fw-bold text-theme mb-2">Design & Engineering</h3>
                 <p class="text-muted mb-3">Detailed process design, hydraulic engineering, and structural planning for WWTPs, ETPs, and STPs. We ensure optimal layout and technology selection tailored to your site.</p>
                 <div><a href="service-detail.html?id=design" class="btn btn-outline-primary">Read More</a></div>
               </div>
+            </div>
+            <div class="col-lg-5 service-img-col order-lg-1">
+              <img src="images/Design & Engineering.png" alt="Design & Engineering">
             </div>
           </div>
         </div>
@@ -154,15 +183,15 @@
       <div class="col-12">
         <div class="service-card-row">
           <div class="row g-0">
-            <div class="col-lg-5 service-img-col">
-              <img src="images/EPC & Turnkey Executions.jpeg" alt="EPC & Turnkey">
-            </div>
-            <div class="col-lg-7">
-              <div class="card-body p-3 d-flex flex-column justify-content-center h-100">
+            <div class="col-lg-7 order-lg-2">
+              <div class="card-body p-4 d-flex flex-column h-100">
                 <h3 class="fw-bold text-theme mb-2">EPC & Turnkey Executions</h3>
                 <p class="text-muted mb-3">End-to-End project execution including Engineering, Procurement, and Construction. We take full responsibility from ground-breaking to commissioning.</p>
                 <div><a href="service-detail.html?id=epc" class="btn btn-outline-primary">Read More</a></div>
               </div>
+            </div>
+            <div class="col-lg-5 service-img-col order-lg-1">
+              <img src="images/EPC & Turnkey Executions.jpg" alt="EPC & Turnkey">
             </div>
           </div>
         </div>
@@ -172,15 +201,15 @@
       <div class="col-12">
         <div class="service-card-row">
           <div class="row g-0">
-            <div class="col-lg-5 service-img-col">
-              <img src="images/Operation & Maintenance (O&M).jpeg" alt="O&M">
-            </div>
-            <div class="col-lg-7">
-              <div class="card-body p-3 d-flex flex-column justify-content-center h-100">
+            <div class="col-lg-7 order-lg-2">
+              <div class="card-body p-4 d-flex flex-column h-100">
                 <h3 class="fw-bold text-theme mb-2">Operation & Maintenance (O&M)</h3>
                 <p class="text-muted mb-3">Professional O&M services to ensure your plant runs at peak efficiency. We handle manpower, chemicals, preventive maintenance, and performance monitoring.</p>
                 <div><a href="service-detail.html?id=om" class="btn btn-outline-primary">Read More</a></div>
               </div>
+            </div>
+            <div class="col-lg-5 service-img-col order-lg-1">
+              <img src="images/Operation & Maintenance (O&M).jpeg" alt="O&M">
             </div>
           </div>
         </div>
@@ -190,15 +219,15 @@
       <div class="col-12">
         <div class="service-card-row">
           <div class="row g-0">
-            <div class="col-lg-5 service-img-col">
-              <img src="images/Plant Upgradation.jpeg" alt="Plant Upgradation">
-            </div>
-            <div class="col-lg-7">
-              <div class="card-body p-3 d-flex flex-column justify-content-center h-100">
+            <div class="col-lg-7 order-lg-2">
+              <div class="card-body p-4 d-flex flex-column h-100">
                 <h3 class="fw-bold text-theme mb-2">Plant Upgradation</h3>
                 <p class="text-muted mb-3">Enhancing the capacity and performance of existing treatment plants. We integrate modern technologies to handle increased loads or stricter discharge norms.</p>
                 <div><a href="service-detail.html?id=upgrade" class="btn btn-outline-primary">Read More</a></div>
               </div>
+            </div>
+            <div class="col-lg-5 service-img-col order-lg-1">
+              <img src="images/Plant Upgradation.jpg" alt="Plant Upgradation">
             </div>
           </div>
         </div>
@@ -208,15 +237,15 @@
       <div class="col-12">
         <div class="service-card-row">
           <div class="row g-0">
-            <div class="col-lg-5 service-img-col">
-              <img src="images/Retrofitting.jpeg" alt="Retrofitting">
-            </div>
-            <div class="col-lg-7">
-              <div class="card-body p-3 d-flex flex-column justify-content-center h-100">
+            <div class="col-lg-7 order-lg-2">
+              <div class="card-body p-4 d-flex flex-column h-100">
                 <h3 class="fw-bold text-theme mb-2">Retrofitting</h3>
                 <p class="text-muted mb-3">Revamping aging infrastructure with new components. We replace outdated equipment with energy-efficient alternatives to extend plant life and reduce costs.</p>
                 <div><a href="service-detail.html?id=retrofit" class="btn btn-outline-primary">Read More</a></div>
               </div>
+            </div>
+            <div class="col-lg-5 service-img-col order-lg-1">
+              <img src="images/Retrofitting.jpeg" alt="Retrofitting">
             </div>
           </div>
         </div>
@@ -226,15 +255,15 @@
       <div class="col-12">
         <div class="service-card-row">
           <div class="row g-0">
-            <div class="col-lg-5 service-img-col">
-              <img src="images/envirnment.jpeg" alt="Environmental Compliance Support">
-            </div>
-            <div class="col-lg-7">
-              <div class="card-body p-3 d-flex flex-column justify-content-center h-100">
+            <div class="col-lg-7 order-lg-2">
+              <div class="card-body p-4 d-flex flex-column h-100">
                 <h3 class="fw-bold text-theme mb-2">Environmental Compliance Support</h3>
                 <p class="text-muted mb-3">Expert assistance with CPCB/SPCB norms, environmental audits, consent management, and regulatory documentation to ensure your business remains compliant.</p>
                 <div><a href="service-detail.html?id=compliance" class="btn btn-outline-primary">Read More</a></div>
               </div>
+            </div>
+            <div class="col-lg-5 service-img-col order-lg-1">
+              <img src="images/Environmental Compliance Support" alt="Environmental Compliance Support">
             </div>
           </div>
         </div>
@@ -244,15 +273,15 @@
       <div class="col-12">
         <div class="service-card-row">
           <div class="row g-0">
-            <div class="col-lg-5 service-img-col">
-              <img src="images/MEE Troubleshooting, Erection & Commissioning.jpeg" alt="MEE Services">
-            </div>
-            <div class="col-lg-7">
-              <div class="card-body p-3 d-flex flex-column justify-content-center h-100">
+            <div class="col-lg-7 order-lg-2">
+              <div class="card-body p-4 d-flex flex-column h-100">
                 <h3 class="fw-bold text-theme mb-2">MEE Troubleshooting, Erection & Commissioning</h3>
                 <p class="text-muted mb-3">Specialized services for Multi-Effect Evaporators (MEE). From erection and commissioning to troubleshooting operational issues and optimizing steam economy.</p>
                 <div><a href="service-detail.html?id=mee" class="btn btn-outline-primary">Read More</a></div>
               </div>
+            </div>
+            <div class="col-lg-5 service-img-col order-lg-1">
+              <img src="images/MEE Troubleshooting, Erection & Commissioning.png" alt="MEE Services">
             </div>
           </div>
         </div>
@@ -268,7 +297,7 @@
     <div class="row g-4">
       <div class="col-md-4">
         <div class="d-flex align-items-center gap-3 mb-3">
-          <img src="images/logo.png" alt="ENV Logo" style="height: 110px;">
+          <img src="images/logo.png" alt="ENV Logo" style="height: 70px;">
           <h5 class="text-uppercase mb-0 fw-bold">ENV SAFE SOLUTIONS</h5>
         </div>
         <p class="opacity-75">Environmental engineering & water recycling solutions. Committed to a cleaner, greener future.</p>

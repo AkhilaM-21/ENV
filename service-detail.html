@@ -17,42 +17,56 @@
     body {
       background-color: #f8fafc;
     }
-    .detail-hero {
-      height: 400px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      margin-top: 76px;
-    }
-    .detail-hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-    }
-    .detail-hero-content {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* New Layout Styles */
+    .detail-header-section {
+      background: linear-gradient(135deg, #1b6fa1, #5fa834);
+      padding: 140px 0 100px;
+      color: #fff;
       text-align: center;
+    }
+    .detail-content-section {
+      margin-top: -60px;
+    }
+    .detail-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+    .detail-image-box {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .detail-image-box img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .detail-image-box:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Breadcrumb overrides for dark bg */
+    .detail-header-section .breadcrumb-item a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+    }
+    .detail-header-section .breadcrumb-item.active {
       color: #fff;
     }
-    .content-box {
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      margin-top: -60px;
-      position: relative;
-      z-index: 3;
+    .detail-header-section .breadcrumb-item + .breadcrumb-item::before {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .navbar-brand img {
+      height: 70px;
+      width: auto;
     }
     @media (max-width: 991.98px) {
       .navbar-brand img {
-        height: 110px;
-        width: auto;
+        height: 60px;
       }
     }
     /* Theme Colors */
@@ -72,6 +86,51 @@
       background: linear-gradient(135deg, #1b6fa1, #5fa834);
       border-color: transparent;
       color: #fff;
+    }
+    /* Injected Content Styling */
+    .content-area h5 {
+      color: #1b6fa1;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.35rem;
+      border-left: 5px solid #5fa834;
+      padding-left: 15px;
+      background: linear-gradient(to right, rgba(95, 168, 52, 0.05), transparent);
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 0 4px 4px 0;
+      -webkit-text-fill-color: #1b6fa1;
+      -webkit-background-clip: border-box;
+      background-clip: border-box;
+    }
+    .content-area h5:first-child {
+      margin-top: 0;
+    }
+    .content-area ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1.5rem;
+    }
+    .content-area ul li {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      color: #4a5568;
+      font-size: 1.05rem;
+    }
+    .content-area ul li::before {
+      content: "\F26A"; /* Bootstrap Icon check-circle */
+      font-family: "bootstrap-icons";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #5fa834;
+      font-size: 1.2rem;
+    }
+    .content-area p {
+      color: #4a5568;
+      margin-bottom: 1.5rem;
     }
   </style>
 </head>
@@ -97,8 +156,34 @@
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link nav-link-item" href="index.html"><i class="bi bi-house"></i>Home</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="about.html"><i class="bi bi-info-circle"></i>About</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-item active" href="services.html"><i class="bi bi-gear"></i>Services</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-item" href="products.html"><i class="bi bi-box"></i>Products</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-item dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-gear"></i>Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=design">Design & Engineering</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=epc">EPC & Turnkey</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=om">Operation & Maintenance</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=upgrade">Plant Upgradation</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=retrofit">Retrofitting</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=compliance">Compliance Support</a></li>
+            <li><a class="dropdown-item" href="service-detail.html?id=mee">MEE Services</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-link-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-box"></i>Products</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="products.html">All Products</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=wwtp">WWTP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=iwtp">IWTP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=stp">STP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=etp">ETP</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=mbr">MBR</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=zld">ZLD System</a></li>
+            <li><a class="dropdown-item" href="product-detail.html?id=services">Treatment Services</a></li>
+          </ul>
+        </li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="careers.html"><i class="bi bi-briefcase"></i>Careers</a></li>
         <li class="nav-item"><a class="nav-link nav-link-item" href="contact.html"><i class="bi bi-envelope"></i>Contact</a></li>
       </ul>
@@ -106,29 +191,49 @@
   </div>
 </nav>
 
-<!-- HERO SECTION -->
-<div class="detail-hero" id="heroBg">
-  <div class="container detail-hero-content">
-    <h1 class="display-4 fw-bold" id="pageTitle">Service Details</h1>
+<!-- HEADER SECTION -->
+<section class="detail-header-section">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb justify-content-center">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="services.html">Services</a></li>
+        <li class="breadcrumb-item active" aria-current="page" id="breadcrumbCurrent">Detail</li>
+      </ol>
+    </nav>
+    <h1 class="display-4 fw-bold mb-0" id="pageTitle">Loading...</h1>
   </div>
-</div>
+</section>
 
 <!-- CONTENT SECTION -->
-<div class="container pb-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-10">
-      <div class="content-box">
-        <h3 class="fw-bold text-theme mb-4" id="contentTitle">Loading...</h3>
-        <div id="contentBody" class="text-muted lead" style="line-height: 1.8;">
-          <!-- Content injected via JS -->
+<section class="detail-content-section pb-5">
+  <div class="container">
+    <div class="detail-card">
+      <!-- 1. Full Width Intro -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <div id="contentIntro" class="content-area"></div>
         </div>
-        <div class="mt-5">
-          <a href="services.html" class="btn btn-outline-primary px-4 py-2">Back to Services</a>
+      </div>
+
+      <!-- 2. Image Left, Content Right -->
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <div class="detail-image-box">
+            <img id="serviceImg" src="" alt="Service Image">
+          </div>
         </div>
+        <div class="col-lg-7">
+          <div id="contentMain" class="content-area"></div>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3 border-top">
+        <a href="services.html" class="btn btn-outline-primary"><i class="bi bi-arrow-left me-2"></i>Back to Services</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer" id="contact">
@@ -136,7 +241,7 @@
     <div class="row g-4">
       <div class="col-md-4">
         <div class="d-flex align-items-center gap-3 mb-3">
-          <img src="images/logo.png" alt="ENV Logo" style="height: 110px;">
+          <img src="images/logo.png" alt="ENV Logo" style="height: 80px;">
           <h5 class="text-uppercase mb-0 fw-bold">ENV SAFE SOLUTIONS</h5>
         </div>
         <p class="opacity-75">Environmental engineering & water recycling solutions. Committed to a cleaner, greener future.</p>
@@ -192,10 +297,9 @@
     "design": {
       title: "Design & Engineering",
       img: "images/Design & Engineering.png",
-      body: `<p>Our Design & Engineering services form the backbone of every successful project. We provide comprehensive process design, hydraulic engineering, and structural planning for Wastewater Treatment Plants (WWTP), Effluent Treatment Plants (ETP), and Sewage Treatment Plants (STP).</p>
-             <p>Our team utilizes advanced software to create precise P&IDs, layout drawings, and hydraulic profiles, ensuring that every system is optimized for the specific site conditions and influent characteristics.</p>
-             <h5 class="mt-4 text-theme fw-bold">Key Offerings:</h5>
-             <ul class="mt-2">
+      intro: `<p class="lead">Our Design & Engineering services form the backbone of every successful project. We provide comprehensive process design, hydraulic engineering, and structural planning for Wastewater Treatment Plants (WWTP), Effluent Treatment Plants (ETP), and Sewage Treatment Plants (STP). Our team utilizes advanced software to create precise P&IDs, layout drawings, and hydraulic profiles, ensuring that every system is optimized for the specific site conditions and influent characteristics.</p>`,
+      content: `<h5 class="text-theme fw-bold">Key Offerings</h5>
+             <ul>
                  <li><strong>Process Selection:</strong> Expertise in ASP, SBR, MBR, MBBR, and ZLD technologies.</li>
                  <li><strong>Hydraulic Design:</strong> Detailed hydraulic flow profiles to ensure gravity flow where possible and efficient pumping.</li>
                  <li><strong>Structural Engineering:</strong> Robust civil designs for tanks, foundations, and equipment support structures.</li>
@@ -205,11 +309,10 @@
     },
     "epc": {
       title: "EPC & Turnkey Executions",
-      img: "images/EPC & Turnkey Executions.jpeg",
-      body: `<p>ENV Safe Solutions offers end-to-end EPC (Engineering, Procurement, and Construction) services. We take full responsibility for the project lifecycle, from the initial ground-breaking to the final commissioning.</p>
-             <p>Our turnkey approach ensures seamless integration of civil, mechanical, and electrical components, delivering ready-to-operate plants on time and within budget constraints.</p>
-             <h5 class="mt-4 text-theme fw-bold">Our EPC Approach:</h5>
-             <ul class="mt-2">
+      img: "images/EPC & Turnkey Executions.jpg",
+      intro: `<p class="lead">ENV Safe Solutions offers end-to-end EPC (Engineering, Procurement, and Construction) services. We take full responsibility for the project lifecycle, from the initial ground-breaking to the final commissioning. Our turnkey approach ensures seamless integration of civil, mechanical, and electrical components, delivering ready-to-operate plants on time and within budget constraints.</p>`,
+      content: `<h5 class="text-theme fw-bold">Our EPC Approach</h5>
+             <ul>
                  <li><strong>Single Point Responsibility:</strong> We manage all vendors and subcontractors, simplifying communication for you.</li>
                  <li><strong>Quality Procurement:</strong> Sourcing of high-quality mechanical and electrical equipment from trusted OEMs.</li>
                  <li><strong>Timely Execution:</strong> Strict project management schedules (PERT/CPM) to avoid delays.</li>
@@ -220,10 +323,9 @@
     "om": {
       title: "Operation & Maintenance (O&M)",
       img: "images/Operation & Maintenance (O&M).jpeg",
-      body: `<p>Efficient operation is key to the longevity of any treatment plant. Our O&M services provide trained manpower, chemical management, and routine preventive maintenance to ensure your plant operates at peak efficiency.</p>
-             <p>We monitor critical parameters daily to ensure compliance with pollution control board norms and minimize downtime.</p>
-             <h5 class="mt-4 text-theme fw-bold">Scope of Services:</h5>
-             <ul class="mt-2">
+      intro: `<p class="lead">Efficient operation is key to the longevity of any treatment plant. Our O&M services provide trained manpower, chemical management, and routine preventive maintenance to ensure your plant operates at peak efficiency. We monitor critical parameters daily to ensure compliance with pollution control board norms and minimize downtime.</p>`,
+      content: `<h5 class="text-theme fw-bold">Scope of Services</h5>
+             <ul>
                  <li><strong>Manpower Supply:</strong> Skilled operators, supervisors, and chemists available 24/7.</li>
                  <li><strong>Process Optimization:</strong> Regular adjustment of dosing and aeration based on influent quality.</li>
                  <li><strong>Lab Analysis:</strong> Daily testing of pH, COD, BOD, TSS, and TDS to track performance.</li>
@@ -233,11 +335,10 @@
     },
     "upgrade": {
       title: "Plant Upgradation",
-      img: "images/Plant Upgradation.jpeg",
-      body: `<p>As industries grow, so does their waste generation. We specialize in upgrading existing treatment facilities to handle higher hydraulic and organic loads.</p>
-             <p>Our upgradation services involve integrating modern technologies into legacy systems, improving treatment quality without the need for entirely new infrastructure.</p>
-             <h5 class="mt-4 text-theme fw-bold">Upgradation Solutions:</h5>
-             <ul class="mt-2">
+      img: "images/Plant Upgradation.jpg",
+      intro: `<p class="lead">As industries grow, so does their waste generation. We specialize in upgrading existing treatment facilities to handle higher hydraulic and organic loads. Our upgradation services involve integrating modern technologies into legacy systems, improving treatment quality without the need for entirely new infrastructure.</p>`,
+      content: `<h5 class="text-theme fw-bold">Upgradation Solutions</h5>
+             <ul>
                  <li><strong>Capacity Expansion:</strong> Modifying tanks and adding equipment to treat increased wastewater volumes.</li>
                  <li><strong>Technology Shift:</strong> Converting conventional ASP systems to MBR or MBBR for better quality and smaller footprint.</li>
                  <li><strong>Tertiary Treatment:</strong> Adding Ultrafiltration (UF) and Reverse Osmosis (RO) for water recycling.</li>
@@ -247,10 +348,9 @@
     "retrofit": {
       title: "Retrofitting",
       img: "images/Retrofitting.jpeg",
-      body: `<p>Aging infrastructure can lead to increased operational costs and compliance risks. Our retrofitting solutions involve replacing outdated components—such as aerators, pumps, and diffusers—with energy-efficient alternatives.</p>
-             <p>This process extends the life of your plant and significantly reduces power consumption.</p>
-             <h5 class="mt-4 text-theme fw-bold">Key Retrofit Activities:</h5>
-             <ul class="mt-2">
+      intro: `<p class="lead">Aging infrastructure can lead to increased operational costs and compliance risks. Our retrofitting solutions involve replacing outdated components—such as aerators, pumps, and diffusers—with energy-efficient alternatives. This process extends the life of your plant and significantly reduces power consumption.</p>`,
+      content: `<h5 class="text-theme fw-bold">Key Retrofit Activities</h5>
+             <ul>
                  <li><strong>Diffuser Replacement:</strong> Swapping coarse bubble diffusers with fine bubble membranes for higher oxygen transfer efficiency.</li>
                  <li><strong>Blower Upgrades:</strong> Installing high-efficiency turbo or screw blowers to reduce energy bills.</li>
                  <li><strong>Media Replacement:</strong> Changing filter media (sand/carbon) and bio-media for better filtration.</li>
@@ -259,11 +359,10 @@
     },
     "compliance": {
       title: "Environmental Compliance Support",
-      img: "images/envirnment.jpeg",
-      body: `<p>Navigating the complex landscape of environmental regulations can be challenging. We provide expert assistance with CPCB and SPCB norms, helping you obtain necessary consents (CFE/CFO).</p>
-             <p>Our services include environmental audits, statutory documentation, and liaison support to ensure your business remains fully compliant.</p>
-             <h5 class="mt-4 text-theme fw-bold">Compliance Services:</h5>
-             <ul class="mt-2">
+      img: "images/Environmental Compliance Support",
+      intro: `<p class="lead">Navigating the complex landscape of environmental regulations can be challenging. We provide expert assistance with CPCB and SPCB norms, helping you obtain necessary consents (CFE/CFO). Our services include environmental audits, statutory documentation, and liaison support to ensure your business remains fully compliant.</p>`,
+      content: `<h5 class="text-theme fw-bold">Compliance Services</h5>
+             <ul>
                  <li><strong>Consent Management:</strong> Application and processing for Consent for Establishment (CFE) and Consent for Operation (CFO).</li>
                  <li><strong>Environmental Audits:</strong> Comprehensive water and energy audits to identify savings and compliance gaps.</li>
                  <li><strong>Regulatory Reporting:</strong> Filing of hazardous waste returns, water cess returns, and environmental statements.</li>
@@ -272,11 +371,10 @@
     },
     "mee": {
       title: "MEE Troubleshooting, Erection & Commissioning",
-      img: "images/MEE Troubleshooting, Erection & Commissioning.jpeg",
-      body: `<p>Multi-Effect Evaporators (MEE) are critical for Zero Liquid Discharge (ZLD) systems but often face operational challenges like scaling and low steam economy.</p>
-             <p>We offer specialized services for MEE erection, commissioning, and troubleshooting. Our experts analyze operational data to optimize steam consumption and resolve scaling issues effectively.</p>
-             <h5 class="mt-4 text-theme fw-bold">MEE Expertise:</h5>
-             <ul class="mt-2">
+      img: "images/MEE Troubleshooting, Erection & Commissioning.png",
+      intro: `<p class="lead">Multi-Effect Evaporators (MEE) are critical for Zero Liquid Discharge (ZLD) systems but often face operational challenges like scaling and low steam economy. We offer specialized services for MEE erection, commissioning, and troubleshooting. Our experts analyze operational data to optimize steam consumption and resolve scaling issues effectively.</p>`,
+      content: `<h5 class="text-theme fw-bold">MEE Expertise</h5>
+             <ul>
                  <li><strong>Erection & Commissioning:</strong> Professional installation and startup of Falling Film, Forced Circulation, and Agitated Thin Film Dryers (ATFD).</li>
                  <li><strong>Troubleshooting:</strong> Diagnosing vacuum drops, pump cavitation, and frequent scaling issues.</li>
                  <li><strong>Descaling Services:</strong> Chemical and mechanical cleaning of calandria tubes.</li>
@@ -291,11 +389,12 @@
 
   if (data) {
     document.getElementById("pageTitle").innerText = data.title;
-    document.getElementById("contentTitle").innerText = data.title;
-    document.getElementById("contentBody").innerHTML = data.body;
-    document.getElementById("heroBg").style.backgroundImage = `url('${data.img}')`;
+    document.getElementById("breadcrumbCurrent").innerText = data.title;
+    document.getElementById("contentIntro").innerHTML = data.intro;
+    document.getElementById("contentMain").innerHTML = data.content;
+    document.getElementById("serviceImg").src = data.img;
   } else {
-    document.getElementById("contentBody").innerHTML = "<p>Service not found. Please return to the services page.</p>";
+    document.getElementById("contentIntro").innerHTML = "<p>Service not found. Please return to the services page.</p>";
   }
 </script>
 
